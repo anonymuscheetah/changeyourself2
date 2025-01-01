@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+:root {
+  color-scheme: black;
+}
+
+body {
+  @apply bg-black text-white overflow-x-hidden;
+}
+
+/* Mobile optimization */
+html, body {
+  @apply max-w-[100vw] overflow-x-hidden;
+}
+
+/* Glass effects */
+.glass {
+  @apply bg-white/5 backdrop-blur-sm border border-white/10;
+}
+
+.glass-dark {
+  @apply bg-black/40 backdrop-blur-md border border-white/10;
+}
+
+/* Animations */
+@keyframes crystal-burst {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.crystal-burst {
+  animation: crystal-burst 0.5s ease-out;
+}
+
+/* Gradient effects */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-400;
+}
+
+.gradient-border {
+  @apply border border-transparent bg-gradient-to-r from-blue-500/20 to-indigo-500/20 backdrop-blur-sm;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+/* Cross-browser compatible scrollbar */
+.custom-scrollbar {
+  overflow-y: auto;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-white/20 rounded-full;
+}
+
+/* Search suggestions */
+.search-suggestions {
+  @apply absolute w-full mt-2 py-2 bg-black/80 backdrop-blur-md border border-white/10 rounded-lg shadow-xl z-50;
+}
+
+.search-suggestion-item {
+  @apply px-4 py-2 hover:bg-white/10 cursor-pointer transition-colors;
+}

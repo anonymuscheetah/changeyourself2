@@ -1,0 +1,35 @@
+@layer utilities {
+  .saas-container {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    min-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  }
+
+  .saas-text {
+    @apply text-base sm:text-lg md:text-xl;
+    text-wrap: balance;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  .saas-heading {
+    @apply text-2xl sm:text-3xl md:text-4xl font-bold;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Mobile viewport fixes */
+@supports (height: 100dvh) {
+  .saas-container {
+    min-height: 100dvh;
+  }
+}
+
+/* iOS Safari fixes */
+@supports (-webkit-touch-callout: none) {
+  .saas-container {
+    padding-top: max(env(safe-area-inset-top), 16px);
+    padding-bottom: max(env(safe-area-inset-bottom), 16px);
+  }
+}
